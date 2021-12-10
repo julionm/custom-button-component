@@ -52,6 +52,15 @@ function App() {
           <span>Button Disabled Text</span>
           <Button variant="text" disabled />
         </div>
+
+        <div className="btnContainer">
+          <span>Button Start Icon</span>
+          <Button startIcon="local_grocery_store" />
+        </div>
+        <div className="btnContainer">
+          <span>Button End Icon</span>
+          <Button variant="text" disabled />
+        </div>
       </div>
     </>
   );

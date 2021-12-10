@@ -10,7 +10,7 @@ type ButtonProps = {
     color?: "primary" | "secondary" | "danger"
 }
 
-export default function Button ({ variant, disableShadow, disabled }: ButtonProps) {
+export default function Button ({ variant, disableShadow, disabled, startIcon, endIcon }: ButtonProps) {
 
     return (
         <button 
@@ -19,6 +19,11 @@ export default function Button ({ variant, disableShadow, disabled }: ButtonProp
                 `${disabled ? 'disable' : ''}`
             }
         >
+            {
+                startIcon ?
+                (<span className="material-icons">face</span>)
+                : ''
+            }
             <span className="btnText">Default</span>
         </button>
     );
