@@ -1,0 +1,71 @@
+.structure {
+    padding: 8px 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border-style: none;
+}
+
+.defaultColors {
+    background: #E0E0E0;
+    box-shadow: 0px 2px 3px 0px #33333333 20%;
+}
+
+.default {
+    
+    @extend .structure;
+    @extend .defaultColors;
+
+    height: 36px;
+    
+    &:hover, &:focus {
+        background: #AEAEAE;
+    }
+
+    .btnText {
+        font-family: Noto Sans JP;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+}
+
+.outline {
+    color: #3D5AFE;
+    border: 1px solid #3D5AFE;
+    background-color: white;
+
+    &:hover, &:focus  {
+        background: #2962FF1A;
+    }
+}
+
+.text {
+    color: #3D5AFE;
+    background: white;
+    border: none;
+
+    &:hover, &:focus  {
+        background: #2962FF1A;
+    }
+}
+
+.disableShadow {
+    
+    background: #3D5AFE;
+
+    & > span {
+        color: white
+    }
+
+    &:hover, &:focus {
+        background: #3D5AFE;
+    }
+}
+
+.disable {
+    color: #9E9E9E;
+    pointer-events: none;
+}
