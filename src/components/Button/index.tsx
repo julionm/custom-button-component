@@ -7,24 +7,41 @@ type ButtonProps = {
     startIcon?: string,
     endIcon?: string,
     size?: "sm" | "md" | "lg",
-    color?: "primary" | "secondary" | "danger"
+    color?: "default" | "primary" | "secondary" | "danger",
+    text?: string
 }
 
-export default function Button ({ variant, disableShadow, disabled, startIcon, endIcon }: ButtonProps) {
+export default function Button ({ variant, disableShadow, disabled, startIcon, endIcon, size, color, text }: ButtonProps) {
+
+    /*
+
+    TODO aumentar espaçamento do texto com os ícones
+
+    */
 
     return (
         <button 
             className={ 
-                `default ${variant} ${disableShadow ? 'disableShadow' : ''} ` +
-                `${disabled ? 'disable' : ''}`
+                `default ${variant} ` +
+                `${disableShadow ? 'disableShadow' : ''} ` +
+                `${disabled ? 'disable' : ''} ` +
+                `${size ? `size-${size}` : ''} ` +
+                `${color ? `${color}` : ''}`
             }
         >
-            {
-                startIcon ?
-                (<span className="material-icons">face</span>)
-                : ''
-            }
-            <span className="btnText">Default</span>
+            <div className="btnIconsContainer">
+                {
+                   startIcon ?
+                   <span className="material-icons">{ startIcon }</span>
+                   : ''
+                }
+                <span className="btnText">{ text ? text : 'Default' }</span>
+                {
+                    endIcon ? 
+                    <span className="material-icons">{ endIcon }</span>
+                    : ''
+                }
+            </div>
         </button>
     );
 }

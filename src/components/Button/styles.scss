@@ -2,7 +2,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 18px;  /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -21,7 +21,7 @@
   
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
 
 .structure {
     padding: 8px 16px;
@@ -32,7 +32,8 @@
 
 .defaultColors {
     background: #E0E0E0;
-    box-shadow: 0px 2px 3px 0px #33333333 20%;
+    box-shadow: 0px 2px 3px 0px #33333333;
+
 }
 
 .default {
@@ -41,6 +42,10 @@
     @extend .defaultColors;
 
     height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     &:hover, &:focus {
         background: #AEAEAE;
@@ -62,6 +67,8 @@
     border: 1px solid #3D5AFE;
     background-color: white;
 
+    box-shadow: unset;
+
     &:hover, &:focus  {
         background: #2962FF1A;
     }
@@ -72,6 +79,8 @@
     background: white;
     border: none;
 
+    box-shadow: unset;
+
     &:hover, &:focus  {
         background: #2962FF1A;
     }
@@ -80,6 +89,8 @@
 .disableShadow {
     
     background: #3D5AFE;
+    box-shadow: unset;
+    color: white;
 
     & > span {
         color: white
@@ -93,4 +104,57 @@
 .disable {
     color: #9E9E9E;
     pointer-events: none;
+}
+
+.btnIconsContainer {
+    display: flex;
+    align-items: center;
+}
+
+.size-sm {
+    height: 32px;
+    padding: 6px 12px;
+}
+
+.size-md {
+    padding: 8px 16px;
+}
+
+.size-lg {
+    height: 42px;
+    padding: 11px 22px;
+}
+
+.default {
+    @extend .defaultColors;
+}
+
+.primary {
+    background: #2962FF;
+    box-shadow: 0px 2px 3px 0px #2962FF33;
+    color: white;
+
+    &:hover, &:focus {
+        background: #0039CB;
+    }
+}
+
+.secondary {
+    background: #455A64;
+    box-shadow: 0px 2px 3px 0px #455A6433;
+    color: white;
+
+    &:hover, &:focus {
+        background: #1C313A;
+    }
+}
+
+.danger {
+    background: #D32F2F;
+    box-shadow: 0px 2px 3px 0px #D32F2F33;
+    color: white;
+
+    &:hover, &:focus {
+        background: #9A0007;
+    }
 }
